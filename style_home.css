@@ -1,0 +1,312 @@
+/* PALETA DE CORES EXATA DA MARCA L³.js */
+:root {
+    --bg-main: #F0E3D9;          /* Fundo suave off-white */
+    --bg-card: #ffffff;          /* Fundo dos cards */
+    --color-brown: #B5826C;      /* Marrom Nude/Aveludado para bordas e subtextos */
+    --color-wine-light: #903E3A; /* Vinho Médio/Queimado */
+    --color-wine-dark: #670B0B;  /* Vinho Escuro/Profundo (Marca L³.js) */
+    --color-blue-cta: #222E50;   /* Azul Noite para destacar botões/ações */
+    --color-blue-hover: #161f38; /* Azul escuro para hover */
+    --text-dark: #2b2b2b;        /* Texto de leitura */
+    --shadow-soft: 0 4px 15px rgba(34, 46, 80, 0.08); /* Sombra ajustada com tom sutil de azul */
+    --shadow-hover: 0 8px 25px rgba(34, 46, 80, 0.18);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* RESET E BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+/* 1. CABEÇALHO E MENU */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2.5rem;
+    background-color: var(--color-wine-dark);
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-top: 4px solid var(--color-blue-cta); /* [NOVO] Detalhe em Azul Marinho no topo */
+}
+
+.logo h1 {
+    font-size: 1.7rem;
+    color: var(--bg-main);
+    letter-spacing: 0.5px;
+}
+
+.logo p {
+    font-size: 0.85rem;
+    color: var(--color-brown);
+    font-style: italic;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.8rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--bg-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Linha decorativa em Azul Marinho ao passar o mouse */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-blue-cta); /* [ALTERADO] Linha decorativa em Azul */
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* 2. SEÇÃO HERO / HOME */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 3.5rem 0;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h2 {
+    font-size: 2.4rem;
+    color: var(--color-wine-dark);
+    margin-bottom: 1.2rem;
+}
+
+.hero-text p {
+    margin-bottom: 1.5rem;
+    color: #4a4a4a;
+    font-size: 1.05rem;
+}
+
+/* [NOVO] Botão CTA em Azul Marinho para destacar ações principais */
+.btn-cta {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--color-blue-cta);
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(34, 46, 80, 0.2);
+}
+
+.btn-cta:hover {
+    background-color: var(--color-blue-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(34, 46, 80, 0.3);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    border: 3px solid var(--color-blue-cta); /* [ALTERADO] Moldura em Azul Marinho */
+}
+
+/* 3. SEÇÃO MODELOS (CARDS EM GRID) */
+.modelos-section {
+    padding: 3rem 0;
+}
+
+.modelos-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-wine-dark);
+}
+
+.modelos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    transition: var(--transition);
+    border-top: 4px solid var(--color-blue-cta); /* [ALTERADO] Borda superior em Azul Marinho */
+    border-bottom: 2px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-bottom: 2px solid var(--color-wine-light);
+}
+
+.card img {
+    border-radius: calc(var(--radius) - 4px);
+    margin-bottom: 1.2rem;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card h3 {
+    color: var(--color-blue-cta); /* [ALTERADO] Título do card em Azul Marinho */
+    margin-bottom: 0.6rem;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: #555555;
+    font-size: 0.95rem;
+}
+
+/* 4. SEÇÃO FEEDBACKS (DESTAQUE EM AZUL E VINHO) */
+.feedback-section {
+    padding: 3.5rem 0;
+}
+
+.feedback-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--color-wine-dark);
+    margin-bottom: 2.5rem;
+}
+
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.feedback-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--bg-card);
+    padding: 1.8rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    border-left: 6px solid var(--color-blue-cta);
+    transition: var(--transition);
+}
+
+.feedback-item:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.feedback-img {
+    flex: 0 0 120px;
+}
+
+.feedback-img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-blue-cta); /* [ALTERADO] Borda do avatar em Azul Marinho */
+}
+
+.feedback-text {
+    flex: 1;
+}
+
+.feedback-text p {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.feedback-text strong {
+    color: var(--color-blue-cta); /* [ALTERADO] Nome do autor em Azul Marinho */
+    font-size: 0.95rem;
+}
+
+/* 5. RODAPÉ */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2.5rem;
+    background-color: var(--color-wine-dark);
+    color: var(--bg-main);
+    margin-top: 3rem;
+    border-bottom: 5px solid var(--color-blue-cta); /* [NOVO] Borda inferior em Azul Marinho */
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: var(--bg-main);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: var(--color-brown);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    color: var(--color-blue-cta); /* [ALTERADO] Hover dos ícones para Azul Marinho */
+}
