@@ -126,3 +126,7 @@ article {
     display: flex;
     flex-direction: column;
 }
+
+article:hover {
+    box-shadow: var(sha);
+}
