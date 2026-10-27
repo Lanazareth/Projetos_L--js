@@ -1,0 +1,284 @@
+/* ==========================================================================
+   PALETA DE CORES E VARIÁVEIS DA MARCA L³.js
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Cores Principais */
+  --bg-main: #F0E3D9;          /* Fundo suave off-white */
+  --bg-card: #FFFFFF;          /* Fundo dos cards */
+  --color-brown: #B5826C;      /* Marrom Nude/Aveludado */
+  --color-wine-light: #903E3A; /* Vinho Medio/Queimado */
+  --color-wine-dark: #670B0B;  /* Vinho Escuro/Profundo */
+  
+  /* Azul Marinho (Destaque Principal) */
+  --color-blue-cta: #222E50;   /* Azul Noite */
+  --color-blue-hover: #161F38; /* Azul escuro para interacoes */
+  --color-blue-soft: #EAEFF9;  /* Azul muito suave para backgrounds de destaque */
+  
+  /* Tipografia e Leitura */
+  --text-dark: #232323;        /* Texto principal */
+  --text-muted: #5C5C5C;       /* Subtextos e legendas */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Sombras e Efeitos */
+  --shadow-sm: 0 2px 8px rgba(34, 46, 80, 0.06);
+  --shadow-md: 0 8px 24px rgba(34, 46, 80, 0.10);
+  --shadow-lg: 0 16px 36px rgba(34, 46, 80, 0.16);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   RESET E BASE
+   ========================================================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   CABEÇALHO (HEADER)
+   ========================================================================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  background-color: rgba(103, 11, 11, 0.96);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-top: 4px solid var(--color-blue-cta);
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.logo-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.logo h1 {
+  font-size: 1.8rem;
+  color: var(--bg-main);
+  letter-spacing: 0.5px;
+}
+.logo p {
+  font-size: 0.8rem;
+  color: var(--color-brown);
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+nav a {
+  text-decoration: none;
+  color: var(--bg-main);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  position: relative;
+  padding: 6px 0;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 3px;
+  background-color: var(--color-blue-cta);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+nav a:hover {
+  color: #FFFFFF;
+}
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================================== */
+main {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Secção de Texto e Imagens do Agendamento */
+#agendamentos {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.area-agendamento {
+    font-family: var(--font-heading);
+    color: var(--color-wine-dark);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+#agendamentos p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+#agendamentos img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   FORMULÁRIO
+   ========================================================================== */
+#formulario-agendamento {
+    background-color: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    max-width: 650px;
+    margin: 0 auto;
+    border-top: 4px solid var(--color-brown);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+form label {
+    font-weight: 600;
+    color: var(--color-wine-dark);
+    font-size: 0.95rem;
+    margin-bottom: -0.5rem;
+}
+
+form input, 
+form select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid #D1D5DB;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-dark);
+    background-color: #FAFAFA;
+    transition: var(--transition);
+}
+
+form input:focus, 
+form select:focus {
+    outline: none;
+    border-color: var(--color-blue-cta);
+    box-shadow: 0 0 0 3px var(--color-blue-soft);
+    background-color: #FFFFFF;
+}
+
+form button {
+    margin-top: 1.5rem;
+    background-color: var(--color-blue-cta);
+    color: #FFFFFF;
+    border: none;
+    padding: 1rem;
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+form button:hover {
+    background-color: var(--color-blue-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+form button:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   RODAPÉ (FOOTER)
+   ========================================================================== */
+
+footer {
+  background-color: var(--color-wine-dark);
+  color: var(--bg-main);
+  padding: 3rem 2.5rem;
+  margin-top: 4rem;
+  border-bottom: 6px solid var(--color-blue-cta);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+footer p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+}
+.social-icons a {
+  text-decoration: none;
+  color: var(--bg-main);
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.social-icons a:hover {
+  background-color: var(--color-blue-cta);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}

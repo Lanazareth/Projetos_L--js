@@ -1,47 +1,73 @@
-JavaScript
+
 const express = require('express');
-const mysql = require('mysql2');
+const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 
 const app = express();
+const PORTA = 3000;
 
 app.use(cors());
 app.use(express.json());
 
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'sua_senha_aqui', 
-  database: 'sistema_agendamento'
-});
-
-
-db.connect((erro) => {
-  if (erro) {
-    console.error('Erro ao conectar ao banco de dados:', erro);
-    return;
-  }
-  console.log('Conectado com sucesso ao banco de dados MySQL!');
-});
-
-
-app.post('/api/agendar', (req, res) => {
-  const { nome, atendimento, data, horario } = req.body;
-
- 
-  const query = 'INSERT INTO agendamentos (nome, atendimento, data, horario) VALUES (?, ?, ?, ?)';
-
-  db.query(query, [nome, atendimento, data, horario], (err, result) => {
-    if (err) {
-      console.error('Erro ao guardar os dados:', err);
-      return res.status(500).json({ erro: 'Erro interno na base de dados' });
+// Abre ou cria o banco SQLite
+const db = new sqlite3.Database('./sistema_agendamento.db', (erro) => {
+    if (erro) {
+        console.error('Erro ao abrir o banco:', erro.message);
+        return;
     }
-    
-    res.status(200).json({ mensagem: 'Agendamento guardado com sucesso!' });
-  });
+
+    console.log('Conectado ao SQLite!');
 });
 
+// Cria a tabela automaticamente
+db.run(`
+    CREATE TABLE IF NOT EXISTS agendamentos (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL,
+        atendimento TEXT NOT NULL,
+        data TEXT NOT NULL,
+        horario TEXT NOT NULL
+    )
+`, (erro) => {
+    if (erro) {
+        console.error('Erro ao criar a tabela:', erro.message);
+        return;
+    }
 
-app.listen(3000, () => {
-  console.log('Servidor Backend a correr na porta 3000 (http://localhost:3000)');
+    console.log('Tabela agendamentos pronta!');
+
+    app.listen(PORTA, () => {
+        console.log(`Servidor rodando em http://localhost:${PORTA}`);
+    });
+});
+
+// Recebe os dados do formulário
+app.post('/api/agendar', (req, res) => {
+    const { nome, atendimento, data, horario } = req.body;
+
+    if (!nome || !atendimento || !data || !horario) {
+        return res.status(400).json({
+            erro: 'Preencha todos os campos.'
+        });
+    }
+
+    const sql = `
+        INSERT INTO agendamentos (nome, atendimento, data, horario)
+        VALUES (?, ?, ?, ?)
+    `;
+
+    db.run(sql, [nome, atendimento, data, horario], function (erro) {
+        if (erro) {
+            console.error('Erro ao salvar agendamento:', erro.message);
+
+            return res.status(500).json({
+                erro: 'Erro ao salvar agendamento no SQLite.'
+            });
+        }
+
+        res.status(201).json({
+            mensagem: 'Agendamento realizado com sucesso!',
+            id: this.lastID
+        });
+    });
 });

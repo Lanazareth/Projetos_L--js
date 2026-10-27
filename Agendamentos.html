@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_agendamento.css">
+    <link rel="shortcut icon" href="icon.jpeg" type="image/x-icon">
+    <title>Salão de Beleza - L³.js</title>
+</head>
+<body>
+    <header>
+       <h1 style="text-align: center;">Salão de Beleza - L³.js</h1>
+       <p style="text-align: center;">Onde a sua beleza ganha Destaque</p>
+
+       <nav style="text-align: center;">
+        <li><a href="indexHome.html">Início</a></li>
+                <li><a href="procedimento.html">Procedimentos</a></li>
+                <li><a href="atendimento_especial.html">Atendimento Especial</a></li>
+                <li><a href="Agendamentos.html">Agendamentos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="Sobre.html">Sobre</a></li>
+       </nav>
+    </header>
+    
+    <main>
+        <section id="agendamentos">
+            <h2 class="area-agendamento">Agendamentos</h2>
+            <br>
+            <p>O nosso sistema de agendamentos foi desenvolvido para oferecer praticidade, conforto e uma experiência organizada a todos os nossos clientes.</p>
+            <p>Para agendamentos de rotina e consultas padrão, escolha a opção desejada no formulário abaixo para garantir a sua reserva com confirmação rápida.</p>
+            <p>Caso necessite de atendimento especial (idosos, pessoas com deficiência ou necessidades específicas), selecione a opção "Procedimento Especial" para que a nossa equipa prepare o suporte e a acessibilidade adequados.</p>
+            
+            <!-- Adicione as extensões corretas das suas imagens aqui (.jpg, .png, etc) -->
+            <img src="https://i.pinimg.com/736x/80/f1/62/80f16212e8985152f7b85a3c67cb185d.jpg" alt="img 24">
+            <img src="https://i.pinimg.com/1200x/40/66/ac/4066acb99ad563680cd0db9ce94846f5.jpg" alt="img 25">
+            <img src="https://i.pinimg.com/736x/4c/df/39/4cdf39b56e0f9d9a0f02ac1bd10be85c.jpg" alt="img 26">
+        </section>
+
+        <!-- Movi o formulário para dentro da tag <main> por questões de semântica -->
+        <section id="formulario-agendamento">
+            <form id="formAgendamento">
+                <label for="nome">Nome :</label>
+                <input type="text" id="nome" required />
+
+                <label for="atendimento">Atendimento :</label>
+                <select id="atendimento" required>
+                    <option value="">Selecione...</option>
+                    <option value="Consulta Padrão">Consulta Padrão</option>
+                    <option value="Exame de Rotina">Exame de Rotina</option>
+                    <option value="Procedimento Especial">Procedimento Especial</option>
+                </select>
+
+                <label for="data">Data :</label>
+                <input type="date" id="data" required />
+
+                <label for="horario">Horario :</label>
+                <input type="time" id="horario" required />
+
+                <button type="submit">Agendar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+    <!-- Footer corrigido e símbolo de copyright (©) adicionado -->
+    <footer>
+        <p style="text-align: center;">&copy; 2026 L³.js. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

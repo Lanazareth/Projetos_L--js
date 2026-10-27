@@ -290,7 +290,12 @@ footer p {
 .social-icons {
   display: flex;
   gap: 1.5rem;
+  margin-left: auto;
 }
+
+.footer-circles {
+  display: none;
+} 
 .social-icons a {
   text-decoration: none;
   color: var(--bg-main);
@@ -307,3 +312,4 @@ footer p {
   color: #FFFFFF;
   transform: translateY(-2px);
 }
+

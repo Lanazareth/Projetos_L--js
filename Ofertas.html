@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_ofertas.css">
+    <link rel="shortcut icon" href="WhatsApp Image 2026-10-07 at 08.52.54.png" type="image/x-icon">
+    <title>Salão de Beleza - L³.js</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo_home.png" alt="Logo L³.js" class="logo-img">
+            <div class="logo-text">
+                <h1>Salão de Beleza - L³.js</h1>
+                <p>Onde a sua beleza ganha Destaque</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="indexHome.html">Início</a></li>
+                <li><a href="procedimento.html">Procedimentos</a></li>
+                <li><a href="atendimento_especial.html">Atendimento Especial</a></li>
+                <li><a href="Agendamentos.html">Agendamentos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="Sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+        
+   <main class="wf-container">
+        
+        <!-- BANNER PRINCIPAL / HERO -->
+        <section class="wf-hero">
+            <div class="wf-hero-text">
+                <span class="wf-tag">OFERTA DA SEMANA</span>
+                <h1>Combo Beleza Renovada</h1>
+                <p>Corte + Hidratação com Ozônio + Escova com 30% OFF de Terça a Quinta.</p>
+                <div class="wf-price">
+                    <span class="old-price">R$ 520,00</span>
+                    <span class="new-price">R$ 360,00</span>
+                </div>
+                <button class="wf-btn primary">Garantir Oferta</button>
+            </div>
+            <div class="wf-hero-img">
+                <div class="wf-img-placeholder hero-box">IMAGEM HERO (DESTAQUE)</div>
+            </div>
+        </section>
+
+
+        <!-- SEÇÃO DE CARDS DE OFERTAS (GRID) -->
+        <section class="wf-offers-section">
+            <h2>Outras Promoções Ativas</h2>
+            
+            <div class="wf-offers-grid">
+                
+                <!-- CARD 1 -->
+                <article class="wf-card">
+                    <div class="wf-img-placeholder card-box">IMAGEM OFERTA 1</div>
+                    <div class="wf-card-content">
+                        <span class="wf-badge">CÍLIOS & SOBRANCELHA</span>
+                        <h3>Look Olhar Marcante</h3>
+                        <p>Lifting de Cílios + Design de Sobrancelha com Henna.</p>
+                        <div class="wf-card-price">
+                            <span class="old-price">R$ 220</span>
+                            <span class="new-price">R$ 160</span>
+                        </div>
+                        <button class="wf-btn secondary">Resgatar Cupom</button>
+                    </div>
+                </article>
+
+
+                <!-- CARD 2 -->
+                <article class="wf-card">
+                    <div class="wf-img-placeholder card-box">IMAGEM OFERTA 2</div>
+                    <div class="wf-card-content">
+                        <span class="wf-badge">UNHAS</span>
+                        <h3>Pé e Mão com Gel</h3>
+                        <p>Manicure e Pedicure com esmaltação em gel inclusa.</p>
+                        <div class="wf-card-price">
+                            <span class="old-price">R$ 200</span>
+                            <span class="new-price">R$ 150</span>
+                        </div>
+                        <button class="wf-btn secondary">Resgatar Cupom</button>
+                    </div>
+                </article>
+
+
+                <!-- CARD 3 -->
+                <article class="wf-card">
+                    <div class="wf-img-placeholder card-box">IMAGEM OFERTA 3</div>
+                    <div class="wf-card-content">
+                        <span class="wf-badge">ESTÉTICA FACIAL</span>
+                        <h3>Limpeza + Massagem</h3>
+                        <p>Limpeza de Pele Profunda + Massagem Facial Relaxante.</p>
+                        <div class="wf-card-price">
+                            <span class="old-price">R$ 380</span>
+                            <span class="new-price">R$ 270</span>
+                        </div>
+                        <button class="wf-btn secondary">Resgatar Cupom</button>
+                    </div>
+                </article>
+
+
+            </div>
+        </section>
+
+
+        <!-- CAPTAÇÃO DE CLIENTES (NEWSLETTER) -->
+        <section class="wf-newsletter">
+           <form class="wf-form" id="formOfertas">
+    <input type="text" id="nomeCliente" placeholder="Seu Nome" required>
+    <input type="tel" id="whatsappCliente" placeholder="Seu WhatsApp" required>
+    <button type="submit" class="wf-btn primary">Quero Ofertas</button>
+</form>
+
+<script>
+    // Exemplo de como o JavaScript captura os dados antes de enviar ao Banco de Dados
+    document.getElementById('formOfertas').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede a página de recarregar
+
+        const nome = document.getElementById('nomeCliente').value;
+        const whatsapp = document.getElementById('whatsappCliente').value;
+
+        const dadosDoCliente = { nome, whatsapp };
+
+        console.log("Dados prontos para enviar pro banco:", dadosDoCliente);
+        
+        // Aqui entraria o código para conectar com seu Banco de Dados / Backend
+    });
+</script>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 L³.js. Todos os direitos reservados.</p>
+        <div class="social-icons">
+            <a href="#">Instagram</a>
+            <a href="#">WhatsApp</a>
+        </div>
+    </footer>
+</body>
+</html>
