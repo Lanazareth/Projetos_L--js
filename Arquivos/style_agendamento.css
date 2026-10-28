@@ -49,10 +49,10 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* ==========================================================================
-   CABEÇALHO (HEADER)
-   ========================================================================== */
+
 /* CABEÇALHO (HEADER) */
+
+
 header {
     background-color: var(--color-wine-dark);
     padding: 1.5rem 5%;
@@ -85,7 +85,7 @@ header {
     justify-content: center;
 }
 
-.logo-text h1 {
+.logo-text h1 {  /* TITULO */
     font-family: var(--font-heading);
     color: #FFFFFF; /* Força a cor branca no título */
     font-size: 2rem;
@@ -138,9 +138,10 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* ==========================================================================
-   CONTEÚDO PRINCIPAL
-   ========================================================================== */
+
+/* CONTEÚDO PRINCIPAL */
+
+
 main {
     max-width: 900px;
     margin: 3rem auto;
@@ -148,6 +149,7 @@ main {
 }
 
 /* Secção de Texto e Imagens do Agendamento */
+
 #agendamentos {
     text-align: center;
     margin-bottom: 3rem;
@@ -177,9 +179,10 @@ main {
     box-shadow: var(--shadow-sm);
 }
 
-/* ==========================================================================
-   FORMULÁRIO
-   ========================================================================== */
+
+/* FORMULÁRIO */
+
+
 #formulario-agendamento {
     background-color: var(--bg-card);
     padding: 2.5rem;
@@ -250,9 +253,7 @@ form button:active {
     transform: translateY(0);
 }
 
-/* ==========================================================================
-   RODAPÉ (FOOTER)
-   ========================================================================== */
+/* RODAPÉ (FOOTER) */
 
 footer {
     background-color: var(--color-wine-dark);

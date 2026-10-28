@@ -360,6 +360,7 @@ nav a.active::after {
     color: #FFFFFF;
 }
 
+
 /* 4. FORMULÁRIO DE NEWSLETTER DE OFERTAS */
 .wf-newsletter {
     background-color: var(--bg-card);

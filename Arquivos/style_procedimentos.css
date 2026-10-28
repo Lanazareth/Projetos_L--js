@@ -154,6 +154,21 @@ nav a:hover::after {
     width: 100%;
 }
 
+/* Remove as bolinhas da lista e coloca os itens lado a lado na horizontal */
+nav ul {
+    list-style: none; /* Remove os marcadores (bolinhas) */
+    display: flex; /* Alinha os itens na horizontal */
+    gap: 20px; /* Espaçamento entre cada link */
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove o sublinhado dos links */
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* Ajuste para a cor do texto do seu menu */
+    font-weight: bold;
+}
 
 /* CONTEÚDO PRINCIPAL - ESTRUTURA ZIGUEZAGUE */
 
@@ -178,6 +193,7 @@ article {
 }
 
 /* Inverte a ordem nos itens pares (Imagem esquerda, texto direita) */
+
 article:nth-child(even) {
     flex-direction: row-reverse;
 }
@@ -225,6 +241,7 @@ article img {
 }
 
 /* BOTÕES */
+
 button {
     background-color: transparent;
     color: var(--color-wine-dark);
@@ -254,6 +271,52 @@ button:active {
     box-shadow: 0 2px 5px rgba(103, 11, 11, 0.2);
 }
 
+.btn-whatsapp {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-wine-dark);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--color-wine-dark);
+}
+
+/* Estilo do botão interativo para o WhatsApp */
+.wf-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--color-wine-dark); /* Verde característico do WhatsApp */
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+/* Efeito ao passar o mouse por cima do botão */
+.wf-btn:hover {
+    background-color: var(--color-wine-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Efeito ao clicar no botão */
+.wf-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 /* RESPONSIVIDADE */
 
