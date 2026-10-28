@@ -16,15 +16,16 @@
                <p>Onde a sua beleza ganha Destaque</p>
             </div>
        </div>
-
-       <nav>
-            <a href="indexHome.html">Início</a>
-            <a href="procedimento.html">Procedimentos</a>
-            <a href="atendimento_especial.html">Atendimento Especial</a>
-            <a href="Agendamento.html">Agendamentos</a>
-            <a href="Ofertas.html">Ofertas</a>
-            <a href="Sobre.html">Sobre</a>
-       </nav>
+        <nav>
+            <ul>
+                <li><a href="indexHome.html">Início</a></li>
+                <li><a href="procedimento.html">Procedimentos</a></li>
+                <li><a href="atendimento_especial.html">Atendimento Especial</a></li>
+                <li><a href="Agendamentos.html" class="active">Agendamentos</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+                <li><a href="Sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
     </header>
     
     <main>
@@ -37,16 +38,14 @@
             
             <!-- Adicione as extensões corretas das suas imagens aqui (.jpg, .png, etc) -->
             
-            <img src="https://i.pinimg.com/1200x/40/66/ac/4066acb99ad563680cd0db9ce94846f5.jpg" alt="img 25">
+            <img src="https://i.pinimg.com/1200x/40/66/ac/4066acb99ad563680cd0db9ce94846f5.jpg" alt="Agendamento" class="img-agendamento">
             
         </section>
-
         <!-- Movi o formulário para dentro da tag <main> por questões de semântica -->
         <section id="formulario-agendamento">
             <form id="formAgendamento">
                 <label for="nome">Nome :</label>
                 <input type="text" id="nome" required />
-
                 <label for="atendimento">Atendimento :</label>
                 <select id="atendimento" required>
                     <option value="">Selecione...</option>
@@ -54,25 +53,20 @@
                     <option value="Exame de Rotina">Exame de Rotina</option>
                     <option value="Procedimento Especial">Procedimento Especial</option>
                 </select>
-
                 <label for="data">Data :</label>
                 <input type="date" id="data" required />
-
                 <label for="horario">Horario :</label>
                 <input type="time" id="horario" required />
-
                 <button type="submit">Agendar</button>
             </form>
         </section>
     </main>
-
     <script src="script.js"></script>
-
     <footer>
         <p>&copy; 2026 L³.js. Todos os direitos reservados.</p>
         <div class="social-icons">
             <a href="https://www.instagram.com/salao.l3js/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://wa.me/5519995734253?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços!" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://wa.me5519995734253/?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços!" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
     </footer>
 </body>

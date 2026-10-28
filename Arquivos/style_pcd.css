@@ -34,7 +34,7 @@ body {
     background-color: var(--bg-main);
     color: var(--text-dark);
     font-family: var(--font-body);
-    line-height: 1.8; /* Espaçamento maior para facilitar a leitura */
+    line-height: 1.8;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -42,88 +42,98 @@ body {
    CABEÇALHO (HEADER)
    ========================================================================== */
 header {
-    background-color: var(--color-wine-dark);
-    padding: 1.5rem 5%;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    box-shadow: var(--shadow-sm);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  background-color: rgba(103, 11, 11, 0.96);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-top: 4px solid var(--color-blue-cta);
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0; /* Impede que a logo seja esmagada */
 }
 
 .logo-img {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--color-brown);
+  width: 55px;
+  height: 55px;
+  min-width: 55px; /* Mantém o tamanho fixo da imagem */
+  min-height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  display: block;
+  flex-shrink: 0;
 }
 
 .logo-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo-text h1 {
-    font-family: var(--font-heading);
-    color: #FFFFFF; /* Força a cor branca no título */
-    font-size: 2rem;
-    margin: 0;
-    line-height: 1;
+.logo h1 {
+  font-size: 1.8rem;
+  color: var(--bg-main);
+  letter-spacing: 0.5px;
 }
 
-.logo-text p {
-    color: var(--color-brown); /* Cor marrom/dourada no subtítulo */
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin: 4px 0 0 0;
+.logo p {
+  font-size: 0.8rem;
+  color: var(--color-brown);
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
-nav {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
-    text-decoration: none;
-    color: #FFFFFF; /* Garante que os links fiquem brancos */
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: var(--transition);
-    position: relative;
-    padding: 5px 0;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  position: relative;
+  padding: 6px 0;
 }
 
 nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0%;
-    height: 2px;
-    background-color: var(--color-blue-hover);
-    transition: var(--transition);
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 3px;
+  background-color: var(--color-blue-cta);
+  border-radius: 2px;
+  transition: var(--transition);
 }
 
 nav a:hover {
-    color: var(--color-blue-soft); /* Efeito hover opcional */
+  color: #FFFFFF;
 }
 
-nav a:hover::after {
-    width: 100%;
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
 }
 
 /* ==========================================================================
@@ -152,7 +162,6 @@ article h2 {
     position: relative;
 }
 
-/* Tracinho delicado abaixo do título principal */
 article h2::after {
     content: '';
     display: block;
@@ -170,22 +179,24 @@ article h2::after {
     text-align: justify;
 }
 
-/* Galeria com Grid responsivo para as 3 imagens */
+/* Container de Centralização da Imagem */
 .galeria-especial {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 2.5rem;
+    width: 100%;
 }
 
 .galeria-especial img {
+    display: block;
+    margin: 0 auto;
     width: 100%;
-    height: 240px;
-    object-fit: cover;
+    max-width: 600px;
+    height: auto;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
-    border: 1px solid rgba(181, 130, 108, 0.2);
 }
 
 .galeria-especial img:hover {
@@ -218,7 +229,7 @@ article h2::after {
 }
 
 .btn-agendar:hover {
-    background-color: var(--color-wine-dark); /* Muda para vinho ao passar o mouse */
+    background-color: var(--color-wine-dark);
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(103, 11, 11, 0.3);
 }
@@ -242,10 +253,12 @@ footer {
   flex-wrap: wrap;
   gap: 1.5rem;
 }
+
 footer p {
   font-size: 0.9rem;
   opacity: 0.9;
 }
+
 .social-icons {
   display: flex;
   gap: 1.5rem;
@@ -255,6 +268,7 @@ footer p {
 .footer-circles {
   display: none;
 } 
+
 .social-icons a {
   text-decoration: none;
   color: var(--bg-main);
@@ -266,12 +280,12 @@ footer p {
   transition: var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .social-icons a:hover {
   background-color: var(--color-blue-cta);
   color: #FFFFFF;
   transform: translateY(-2px);
 }
-
 
 /* Responsividade */
 @media (max-width: 768px) {

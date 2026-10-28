@@ -172,13 +172,37 @@ main {
 
 #agendamentos img {
     width: 100%;
-    height: 250px;
+    height: 350px;
     object-fit: cover;
     border-radius: var(--radius-md);
     margin: 1.5rem 0;
     box-shadow: var(--shadow-sm);
 }
 
+.img-agendamento {
+    width: 100%;          /* Faz a imagem ocupar 100% da largura do elemento pai */
+    max-width: 100%;      /* Evita que ela ultrapasse os limites */
+    height: auto;         /* Mantém a proporção da imagem sem distorcer */
+    display: block;       /* Remove espaçamentos indesejados abaixo da imagem */
+    border-radius: 12px;  /* Mantém as bordas arredondadas (ajuste se preferir) */
+    margin: 1rem 0;       /* Adiciona um espaçamento em cima e embaixo */
+}
+
+/* Remove as bolinhas da lista e coloca os itens lado a lado na horizontal */
+nav ul {
+    list-style: none; /* Remove os marcadores (bolinhas) */
+    display: flex; /* Alinha os itens na horizontal */
+    gap: 20px; /* Espaçamento entre cada link */
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove o sublinhado dos links */
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* Ajuste para a cor do texto do seu menu */
+    font-weight: bold;
+}
 
 /* FORMULÁRIO */
 
